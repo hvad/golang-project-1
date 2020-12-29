@@ -27,11 +27,12 @@ func checkUrl(url string) {
 func main() {
 
 	url := flag.String("url", "http://example.com", "Url to check")
+	interval := flag.Uint64("interval", 5, "Interval to check in minutes")
 	flag.Parse()
 
 	// Schedule check URL every 5 minutes
 	s1 := gocron.NewScheduler(time.UTC)
-	_, err := s1.Every(5).Minutes().Do(checkUrl, *url)
+	_, err := s1.Every(*interval).Minutes().Do(checkUrl, *url)
 	if err != nil {
 		log.Fatalf("error creating job: %v", err)
 	}
