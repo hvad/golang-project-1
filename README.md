@@ -4,7 +4,7 @@ Mon premier projet en Golang
 Un script qui vérifie l'état d'une URL.   
 
 ## Pour construire le binaire :
-    # go build main.go -o go-monitoring-url 
+    # go build -o go-monitoring-url 
 
 ## Usage :
 
